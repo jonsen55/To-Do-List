@@ -1,0 +1,149 @@
+/* Base styles */
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --primary: #4f8cff;
+  --accent: #e0e0e0;
+  --completed: #bdbdbd;
+  --danger: #ff5c5c;
+  --shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.input-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+#task-input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+#add-task-btn {
+  padding: 0.7rem 1.1rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#add-task-btn:hover {
+  background: #2563eb;
+}
+
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid var(--accent);
+  transition: background 0.2s;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
+.task-checkbox {
+  accent-color: var(--primary);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  word-break: break-word;
+  transition: color 0.2s;
+}
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--completed);
+}
+.task-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+.edit-btn, .delete-btn, .save-btn, .cancel-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.delete-btn {
+  color: var(--danger);
+}
+.edit-btn:hover, .save-btn:hover, .cancel-btn:hover {
+  background: var(--accent);
+}
+.delete-btn:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+#clear-all-btn {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#clear-all-btn:hover {
+  background: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    max-width: 98vw;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 1.3rem;
+  }
+  #add-task-btn, #clear-all-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.7rem;
+  }
+} 
